@@ -1,7 +1,3 @@
----
-output: html_document
----
-
 # Reproducible Research
 ## Peer Assessment 1
 
@@ -110,6 +106,7 @@ The following function (fillNA.R) replaces all the NA values with the mean value
 ## +                 filled[missing[i],]$steps <- value
 ## +         }
 ## +         return(filled)
+## +         
 ## + }
 ```
 
@@ -199,7 +196,5 @@ This function was used to convert the 5-minutes interval data into a date and ti
 ## +         #merge this with the original data as a new column
 ## +         newdata <- data.frame(data, date.time=datetime)
 ## +         newdata
-## +         
-## +         
 ## + }
 ```

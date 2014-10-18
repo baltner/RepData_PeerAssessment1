@@ -302,6 +302,7 @@ the mean/median for that day, or the mean for that 5-minute interval, etc.</li>
 ## +                 filled[missing[i],]$steps &lt;- value
 ## +         }
 ## +         return(filled)
+## +         
 ## + }
 </code></pre>
 
@@ -382,8 +383,6 @@ plot(tswd$Interval,tswd$x,type=&quot;l&quot;,ylim=c(0,250),ylab=&quot;Average St
 ## +         #merge this with the original data as a new column
 ## +         newdata &lt;- data.frame(data, date.time=datetime)
 ## +         newdata
-## +         
-## +         
 ## + }
 </code></pre>
 
