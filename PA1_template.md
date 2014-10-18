@@ -7,6 +7,7 @@ output: html_document
 
 
 
+
 ### Loading and preprocessing the data
 
 Data is loaded and processed using the getDateTime() function to create a modified dataframe. (Scroll to the end of this document to view the source code for this function.)

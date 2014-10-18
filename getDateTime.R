@@ -11,6 +11,4 @@ getDateTime <- function(data){
         #merge this with the original data as a new column
         newdata <- data.frame(data, date.time=datetime)
         newdata
-        
-        
 }

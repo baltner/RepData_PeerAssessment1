@@ -11,4 +11,5 @@ fillNA <- function(d,means){
                 filled[missing[i],]$steps <- value
         }
         return(filled)
+        
 }
