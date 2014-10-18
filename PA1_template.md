@@ -1,12 +1,5 @@
----
-title: Reproducible Research (PA1)
-author: Bruce Altner
-date: October 18, 2014
-output:
-  html_document:
-   keep_md: true
----
-
+# Reproducible Research
+## Peer Assessment 1
 
 
 
