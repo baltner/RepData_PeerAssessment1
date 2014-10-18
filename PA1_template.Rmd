@@ -4,7 +4,6 @@ author: Bruce Altner
 date: October 18, 2014
 output:
   html_document:
-   toc: true
    keep_md: true
 ---
 
