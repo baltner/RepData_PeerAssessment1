@@ -157,7 +157,7 @@ The total number of daily steps when missing data are imputed is **656738**, whe
 
 ### Are there differences in activity patterns between weekdays and weekends?
 
-Yes, it appears that the weekday steps have a pronounced peak (on average) at around 8:30 AM (interval 835) whereas the steps during the weekend are more spread out during the day. See the plot of this behavior, below.
+It appears that the weekday steps have a pronounced peak (on average) at around 8:30 AM (interval 835) whereas the steps during the weekend are more spread out during the day. See the plot of this behavior, below.
 
 
 ```r
@@ -169,7 +169,7 @@ tswd<-aggregate(newdata$steps[!weekend],by=list(Interval = newdata$interval[!wee
 #plot the results
 par(mar=c(4,4,2,2),mfrow=c(2,1))
 plot(tswe$Interval,tswe$x,type="l",ylim=c(0,250),ylab="Average Steps",xlab="", main="Weekend")
-plot(tswd$Interval,tswd$x,type="l",ylim=c(0,250),ylab="Average Steps",xlab="Interval",main="Weekday")
+plot(tswd$Interval,tswd$x,type="l",ylim=c(0,250),ylab="Average Steps",xlab="Interval",main="Weekdays")
 ```
 
 ![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
