@@ -1,5 +1,6 @@
-# Reproducible Research
-## Peer Assessment 1
+# Reproducible Research (PA1)
+Bruce Altner  
+October 18, 2014  
 
 
 
@@ -28,7 +29,7 @@ steps<-aggregate(newdata$steps,by=list(Date = newdata$date),sum)
 hist(steps$x,ylim=c(0,40), xlab="Steps/Day",main="Missing Values Ignored")
 ```
 
-![plot of chunk steps](figure/steps.png) 
+![plot of chunk steps](./PA1_template_files/figure-html/steps.png) 
 
 
 2. Calculate and report the mean and median total number of steps taken
@@ -60,7 +61,7 @@ plot(tssteps$Interval,tssteps$x,type="l",xlab="Interval Number", ylab="Average S
 abline(v=tssteps$Interval[peak], col="red")
 ```
 
-![plot of chunk activity_pattern](figure/activity_pattern.png) 
+![plot of chunk activity_pattern](./PA1_template_files/figure-html/activity_pattern.png) 
 
 
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
@@ -128,7 +129,7 @@ stepsf<-aggregate(filled$steps,by=list(Date = filled$date),sum)
 hist(stepsf$x,ylim=c(0,40), xlab="Steps/Day", main="Missing Values Imputed")
 ```
 
-![plot of chunk newhist](figure/newhist.png) 
+![plot of chunk newhist](./PA1_template_files/figure-html/newhist.png) 
 
 ```r
 #mean steps per day
@@ -173,7 +174,7 @@ plot(tswe$Interval,tswe$x,type="l",ylim=c(0,250),ylab="Average Steps",xlab="", m
 plot(tswd$Interval,tswd$x,type="l",ylim=c(0,250),ylab="Average Steps",xlab="Interval",main="Weekday")
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
+![plot of chunk unnamed-chunk-3](./PA1_template_files/figure-html/unnamed-chunk-3.png) 
 
 ----
 ### getDateTime.R
