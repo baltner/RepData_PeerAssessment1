@@ -131,7 +131,7 @@ The total number of daily steps when missing data are imputed is **`r format(sum
 
 It appears that the weekday steps have a pronounced peak (on average) at around 8:30 AM (interval 835) whereas the steps during the weekend are more spread out during the day. See the plot of this behavior, below.
 
-```{r}
+```{r weekdays}
 day_of_week <- format(newdata$date.time, format="%a")
 weekend <-(day_of_week == "Sat" | day_of_week == "Sun")
 tswe<-aggregate(newdata$steps[weekend],by=list(Interval = newdata$interval[weekend]),na_mean)

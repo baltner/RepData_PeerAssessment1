@@ -172,7 +172,7 @@ plot(tswe$Interval,tswe$x,type="l",ylim=c(0,250),ylab="Average Steps",xlab="", m
 plot(tswd$Interval,tswd$x,type="l",ylim=c(0,250),ylab="Average Steps",xlab="Interval",main="Weekdays")
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
+![plot of chunk weekdays](figure/weekdays.png) 
 
 ----
 ### getDateTime.R
