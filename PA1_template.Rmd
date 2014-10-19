@@ -1,3 +1,6 @@
+---
+output: html_document
+---
 # Reproducible Research
 ## Peer Assessment 1
 
@@ -7,7 +10,7 @@ source('./getDateTime.R')
 
 ### Loading and preprocessing the data
 
-Data is loaded and processed using the getDateTime() function to create a modified dataframe. (Scroll to the end of this document to view the source code for this function.)
+Data is loaded and then processed using the getDateTime() function to create a modified dataframe. (Scroll to the end of this document to view the source code for this function.)
 
 ```{r load_data, echo=TRUE}
 #load the data
@@ -131,11 +134,11 @@ The total number of daily steps when missing data are imputed is **`r format(sum
 
 It appears that the weekday steps have a pronounced peak (on average) at around 8:30 AM (interval 835) whereas the steps during the weekend are more spread out during the day. See the plot of this behavior, below.
 
-```{r weekdays}
-day_of_week <- format(newdata$date.time, format="%a")
-weekend <-(day_of_week == "Sat" | day_of_week == "Sun")
-tswe<-aggregate(newdata$steps[weekend],by=list(Interval = newdata$interval[weekend]),na_mean)
-tswd<-aggregate(newdata$steps[!weekend],by=list(Interval = newdata$interval[!weekend]),na_mean)
+```{r weekday}
+wds<-weekdays(filled$date.time,abbreviate=T)
+weekend <-(wds == "Sat" | wds == "Sun")
+tswe<-aggregate(filled$steps[weekend],by=list(Interval = filled$interval[weekend]),na_mean)
+tswd<-aggregate(filled$steps[!weekend],by=list(Interval = filled$interval[!weekend]),na_mean)
 
 #plot the results
 par(mar=c(4,4,2,2),mfrow=c(2,1))

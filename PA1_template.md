@@ -1,3 +1,6 @@
+---
+output: html_document
+---
 # Reproducible Research
 ## Peer Assessment 1
 
@@ -5,7 +8,7 @@
 
 ### Loading and preprocessing the data
 
-Data is loaded and processed using the getDateTime() function to create a modified dataframe. (Scroll to the end of this document to view the source code for this function.)
+Data is loaded and then processed using the getDateTime() function to create a modified dataframe. (Scroll to the end of this document to view the source code for this function.)
 
 
 ```r
@@ -161,10 +164,10 @@ It appears that the weekday steps have a pronounced peak (on average) at around 
 
 
 ```r
-day_of_week <- format(newdata$date.time, format="%a")
-weekend <-(day_of_week == "Sat" | day_of_week == "Sun")
-tswe<-aggregate(newdata$steps[weekend],by=list(Interval = newdata$interval[weekend]),na_mean)
-tswd<-aggregate(newdata$steps[!weekend],by=list(Interval = newdata$interval[!weekend]),na_mean)
+wds<-weekdays(filled$date.time,abbreviate=T)
+weekend <-(wds == "Sat" | wds == "Sun")
+tswe<-aggregate(filled$steps[weekend],by=list(Interval = filled$interval[weekend]),na_mean)
+tswd<-aggregate(filled$steps[!weekend],by=list(Interval = filled$interval[!weekend]),na_mean)
 
 #plot the results
 par(mar=c(4,4,2,2),mfrow=c(2,1))
@@ -172,7 +175,7 @@ plot(tswe$Interval,tswe$x,type="l",ylim=c(0,250),ylab="Average Steps",xlab="", m
 plot(tswd$Interval,tswd$x,type="l",ylim=c(0,250),ylab="Average Steps",xlab="Interval",main="Weekdays")
 ```
 
-![plot of chunk weekdays](figure/weekdays.png) 
+![plot of chunk weekday](figure/weekday.png) 
 
 ----
 ### getDateTime.R
