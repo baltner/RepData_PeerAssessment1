@@ -1,6 +1,4 @@
----
-output: html_document
----
+
 # Reproducible Research
 ## Peer Assessment 1
 
@@ -137,13 +135,13 @@ It appears that the weekday steps have a pronounced peak (on average) at around 
 ```{r weekday}
 wds<-weekdays(filled$date.time,abbreviate=T)
 weekend <-(wds == "Sat" | wds == "Sun")
-tswe<-aggregate(filled$steps[weekend],by=list(Interval = filled$interval[weekend]),na_mean)
-tswd<-aggregate(filled$steps[!weekend],by=list(Interval = filled$interval[!weekend]),na_mean)
+tswe<-aggregate(filled$steps[weekend],by=list(Interval = filled$interval[weekend]),mean)
+tswd<-aggregate(filled$steps[!weekend],by=list(Interval = filled$interval[!weekend]),mean)
 
 #plot the results
 par(mar=c(4,4,2,2),mfrow=c(2,1))
-plot(tswe$Interval,tswe$x,type="l",ylim=c(0,250),ylab="Average Steps",xlab="", main="Weekend")
-plot(tswd$Interval,tswd$x,type="l",ylim=c(0,250),ylab="Average Steps",xlab="Interval",main="Weekdays")
+plot(tswe$Interval,tswe$x,type="l",ylim=c(0,240),ylab="Average Steps",xlab="", main="Weekend")
+plot(tswd$Interval,tswd$x,type="l",ylim=c(0,240),ylab="Average Steps",xlab="Interval",main="Weekdays")
 
 ```
 
